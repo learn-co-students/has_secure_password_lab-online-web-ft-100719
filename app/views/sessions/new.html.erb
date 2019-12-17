@@ -1,0 +1,12 @@
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+    <label>Name:</label>
+    <%= text_field_tag :name %><br><br>
+
+    <label>Password:</label>
+    <%= password_field_tag :password %><br><br>
+
+    <%= submit_tag "Login" %>
+<% end %>
+<hr>
+Not a Member?
+<%= button_to "Signup", signup_path, method: 'get' %>

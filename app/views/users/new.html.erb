@@ -1,0 +1,21 @@
+<% if flash[:error] %>
+    I'm sorry, there were some errors on signing up:
+    <ul>
+        <% flash[:error].each do |e| %>
+            <li><%= e %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @user, url: signup_path do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br><br>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %><br><br>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %><br><br>
+
+    <%= f.submit "Signup" %>
+<% end %>
