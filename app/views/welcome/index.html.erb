@@ -1,0 +1,4 @@
+<%= "Hi #{name}" %>
+<%= form_for User.new, url:'/logout', method:'destroy' do |f| %>
+<%= f.submit "Logout" %>
+<% end %>
