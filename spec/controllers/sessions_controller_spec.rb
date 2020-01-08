@@ -15,7 +15,6 @@ RSpec.describe SessionsController, type: :controller do
     end
 
     it 'rejects invalid passwords' do
-      binding.pry
       post :create, params: { user: {name: connie.name, password: connie.password + 'x'} }
       expect(session[:user_id]).to be_nil
     end

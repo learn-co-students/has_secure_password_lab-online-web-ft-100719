@@ -10,10 +10,7 @@ class SessionsController < ApplicationController
     else
       binding.pry
       user = User.find_by(name: params[:user][:name])
-      if (authenticated = user.try(:authenticate, params[:user][:password]))
-        session[:user_id] = user.id
-        session[:name] = params[:user][:name]
-      else
+      authenticated = user.try(:authenticate, params[:user][:password])
       redirect_to login_path unless authenticated
       binding.pry
       session[:user_id] = user.id
