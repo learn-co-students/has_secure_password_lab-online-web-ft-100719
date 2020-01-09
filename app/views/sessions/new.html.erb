@@ -1,0 +1,5 @@
+<%= form_for :user, controller: 'sessions', action: 'create', method: 'post' do |f|%>
+  Name: <%= f. text_field :name %>
+  Password:  <%= f.password_field :password %>
+  <%= f.submit "Submit" %>
+<% end %>
