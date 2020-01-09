@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def home
-    @user = User.find_by(name: params[:name])
+    @user = User.find_by(name: params[:user][:name])
   end
 
 private
